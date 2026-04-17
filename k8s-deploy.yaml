@@ -15,6 +15,7 @@ spec:
       containers:
       - name: animal-app
         image: 099438709079.dkr.ecr.us-east-1.amazonaws.com/cute-animal-app:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
 ---
