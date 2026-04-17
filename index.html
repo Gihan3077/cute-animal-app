@@ -1,14 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cute Animals</title>
+    <title>Cute Animal Surprise</title>
     <style>
-        body { text-align: center; background: #ffeef8; font-family: sans-serif; padding-top: 50px; }
-        button { padding: 20px 40px; font-size: 20px; cursor: pointer; border-radius: 15px; border: none; background: #ff69b4; color: white; }
+        body { 
+            display: flex; flex-direction: column; align-items: center; justify-content: center; 
+            height: 100vh; margin: 0; background: linear-gradient(135deg, #fce4ec, #f3e5f5);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        h1 { color: #880e4f; margin-bottom: 20px; }
+        
+        /* The Button */
+        #reveal-btn {
+            padding: 15px 30px; font-size: 20px; cursor: pointer; border-radius: 50px;
+            border: none; background: #ec407a; color: white; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+        #reveal-btn:hover { transform: scale(1.1); background: #d81b60; }
+
+        /* The Animal Image */
+        #animal-container {
+            margin-top: 30px; display: none; /* Hidden by default */
+        }
+        #animal-img {
+            width: 300px; border-radius: 20px; border: 8px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            animation: popIn 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+
+        /* The Animation */
+        @keyframes popIn {
+            0% { transform: scale(0) rotate(-20deg); opacity: 0; }
+            100% { transform: scale(1) rotate(0deg); opacity: 1; }
+        }
     </style>
 </head>
 <body>
-    <h1>Click for a Surprise!</h1>
-    <button onclick="alert('🐱 Meow! You found a cute cat!')">Click Me!</button>
+
+    <h1>Ready for Cuteness?</h1>
+    <button id="reveal-btn" onclick="showAnimal()">Click for a Surprise!</button>
+
+    <div id="animal-container">
+        <img id="animal-img" src="https://placedog.net/500/500?random" alt="Cute Animal">
+        <p style="text-align:center; font-weight:bold; color:#ad1457;">🐾 Woof! 🐾</p>
+    </div>
+
+    <script>
+        function showAnimal() {
+            const container = document.getElementById('animal-container');
+            const btn = document.getElementById('reveal-btn');
+            
+            container.style.display = 'block';
+            btn.style.display = 'none'; // Hide button after click
+        }
+    </script>
 </body>
 </html>
