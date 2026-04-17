@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: animal-app
-        image: <YOUR_AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/cute-animal-app:latest
+        image: 099438709079.dkr.ecr.us-east-1.amazonaws.com/cute-animal-app:latest
         ports:
         - containerPort: 80
 ---
